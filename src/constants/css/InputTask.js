@@ -10,6 +10,7 @@ const InputTask = styled.input`
     border: none;
     border-radius: 5px;
     margin-top: 20px;
+    text-align: center;
 `;
 
 export default InputTask;

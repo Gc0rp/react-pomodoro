@@ -25,6 +25,11 @@ const reset = css`
         margin: 5px;
     }
 
+    .col-lg-6{
+        border: 1px solid red;
+        padding-left: 0px;
+    }
+
     ::placeholder{
         color: white;
     }

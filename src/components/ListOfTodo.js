@@ -10,7 +10,12 @@ class ListOfTodo extends React.Component{
     render(){
         return (
             <div style={BoxStyle}>
-                <h1>test</h1>
+                <div style={{display: "flex"}}>
+                <h1>To-do List</h1>
+                <h1>To-do List</h1>
+                <h1>To-do List</h1>
+                </div>
+                
             </div>
         );
     }
