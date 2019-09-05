@@ -26,7 +26,6 @@ const reset = css`
     }
 
     .col-lg-6{
-        border: 1px solid red;
         padding-left: 0px;
     }
 

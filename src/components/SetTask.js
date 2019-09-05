@@ -2,8 +2,9 @@ import React, {Fragment} from 'react';
 import MainHeading from '../constants/css/Heading';
 import InputTask from '../constants/css/InputTask';
 import SubHeading from '../constants/css/SubHeading';
-import ArrowUp from '../images/ArrowUp.png';
-import Arrow from './Arrow';
+import ArrowUp from './ArrowUp';
+import ArrowDown from './ArrowDown';
+import AddButton from './Add';
 
 class SetTask extends React.Component{
 
@@ -26,9 +27,26 @@ class SetTask extends React.Component{
                     <div className="col-lg-6">
                         <SubHeading>Session Length</SubHeading>
                     </div>
-                    <div className="col-lg-6">
-                        <Arrow source={ArrowUp} alt="Arrow Up"></Arrow>
+                    <div className="col-lg-6" style={{padding: "12px", display: "flex"}}>
+                        <ArrowUp />
+                        <h3>25:00</h3>
+                        <ArrowDown />
                     </div>
+                </div>
+
+                <div className="col-lg-12" style={{display: "flex"}}>
+                    <div className="col-lg-6">
+                        <SubHeading>Break Length</SubHeading>
+                    </div>
+                    <div className="col-lg-6" style={{padding: "12px", display: "flex"}}>
+                        <ArrowUp />
+                        <h3>25:00</h3>
+                        <ArrowDown />
+                    </div>
+                </div>
+
+                <div className="col-lg-12" style={{textAlign: "right"}}>
+                    <AddButton></AddButton>
                 </div>
             </Fragment>
         );

@@ -1,5 +1,7 @@
 import React from 'react';
 import BoxStyle from '../constants/css/BoxStyle';
+import DateOfToday from './DateOfToday';
+import todoStyle from '../constants/css/TodoStyle';
 
 class ListOfTodo extends React.Component{
 
@@ -10,10 +12,13 @@ class ListOfTodo extends React.Component{
     render(){
         return (
             <div style={BoxStyle}>
-                <div style={{display: "flex"}}>
-                <h1>To-do List</h1>
-                <h1>To-do List</h1>
-                <h1>To-do List</h1>
+                <div className="row" style={{display: "flex"}}>
+                    <div className="col-lg-6">
+                        <DateOfToday />
+                    </div>
+                    <div className="col-lg-6">
+                        <h5 style={todoStyle}>To-Do</h5>
+                    </div>
                 </div>
                 
             </div>
