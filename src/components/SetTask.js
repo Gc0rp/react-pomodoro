@@ -24,10 +24,10 @@ class SetTask extends React.Component{
                 </div>
 
                 <div className="col-lg-12" style={{display: "flex"}}>
-                    <div className="col-lg-6 setTaskLabel">
+                    <div className="col-lg-6">
                         <SubHeading>Session Length</SubHeading>
                     </div>
-                    <div className="col-lg-6 setTaskLabel" style={{padding: "12px", display: "flex"}}>
+                    <div className="col-lg-6" style={{padding: "12px", display: "flex"}}>
                         <ArrowUp />
                         <h3>25:00</h3>
                         <ArrowDown />
@@ -35,10 +35,10 @@ class SetTask extends React.Component{
                 </div>
 
                 <div className="col-lg-12" style={{display: "flex"}}>
-                    <div className="col-lg-6 setTaskLabel">
+                    <div className="col-lg-6">
                         <SubHeading>Break Length</SubHeading>
                     </div>
-                    <div className="col-lg-6 setTaskLabel" style={{padding: "12px", display: "flex"}}>
+                    <div className="col-lg-6" style={{padding: "12px", display: "flex"}}>
                         <ArrowUp />
                         <h3>25:00</h3>
                         <ArrowDown />
@@ -46,7 +46,7 @@ class SetTask extends React.Component{
                 </div>
 
                 <div className="col-lg-12" style={{textAlign: "right"}}>
-                    <AddButton />
+                    <AddButton></AddButton>
                 </div>
             </Fragment>
         );
