@@ -25,8 +25,13 @@ const reset = css`
         margin: 5px;
     }
 
-    .col-lg-6{
+    .setTaskLabel{
         padding-left: 0px;
+        border: 1px solid red;
+    }
+
+    .list-of-todo-label{
+        text-align: left;
     }
 
     ::placeholder{

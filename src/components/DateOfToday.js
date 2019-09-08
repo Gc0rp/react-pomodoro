@@ -5,7 +5,7 @@ const date = new Date();
 
 const DateOfToday = () => (
     <h1 style={todoStyle}>
-        {(date.getDay() + 1).toString() + '/' + (date.getMonth() + 1).toString() + '/' + date.getFullYear().toString()}
+        {(date.getDate()).toString() + '/' + (date.getMonth() + 1).toString() + '/' + date.getFullYear().toString()}
     </h1>
 );
 
