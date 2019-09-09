@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import MainHeading from '../constants/css/Heading';
-import InputTask from '../constants/css/InputTask';
+import InputTask from './InputTask';
 import SubHeading from '../constants/css/SubHeading';
 import ArrowUp from './ArrowUp';
 import ArrowDown from './ArrowDown';
@@ -20,7 +20,7 @@ class SetTask extends React.Component{
                     <MainHeading>Pomodoro.</MainHeading>
                 </div>
                 <div className="col-lg-12">
-                    <InputTask placeholder="Add a new task...!"></InputTask>
+                    <InputTask />
                 </div>
 
                 <div className="col-lg-12" style={{display: "flex"}}>

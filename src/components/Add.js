@@ -1,4 +1,5 @@
 import React from 'react'; 
+import {connect} from 'react-redux';
 
 const AddStyles = { 
     width: "100px",
@@ -9,10 +10,28 @@ const AddStyles = {
     fontWeight: "bold"
 };
 
-const Add = () => (
-    <button className="btn" type="button" style={AddStyles}>
-        Add
-    </button>
-);
+class Add extends React.Component{
+    constructor(props){
+        super(props);
+    
+        this.handleClick = this.handleClick.bind(this);
+    }
 
-export default Add;
+    handleClick(){
+        console.log(this.props.ct);
+    }
+
+    render(){
+        return(
+            <button className="btn" type="button" style={AddStyles} onClick={this.handleClick}>Add</button>
+        );
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        ct: state.currentTask,
+    };
+};
+
+export default connect(mapStateToProps)(Add);
