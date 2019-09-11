@@ -20,7 +20,7 @@ class InputTask extends React.Component {
         super(props);
 
         this.handleChange = this.handleChange.bind(this);
-    }
+    }   
 
     handleChange(event){
         this.props.updateTask(event.target.value);
@@ -28,17 +28,11 @@ class InputTask extends React.Component {
 
     render(){
         return(
-            <input style={InputBoxStyle} placeholder="Add a new Task...!" onClick={this.handleChange} /> 
+            <input style={InputBoxStyle} placeholder="Add a new Task...!" onChange={this.handleChange} maxLength="50"/> 
         );
     }
 
 }
-
-const mapStateToProps = (state) => {
-    return {
-        currentInput: state.currentInput
-    };
-};
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -48,4 +42,4 @@ const mapDispatchToProps = (dispatch) => {
     }; 
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(InputTask);
+export default connect(null, mapDispatchToProps)(InputTask);

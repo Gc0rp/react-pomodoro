@@ -4,8 +4,10 @@ import EnterTask from '../actions/EnterTask';
 
 const defaultState = {
     currentTask: '',
-    breakTime: '',
-    taskTime: '',
+    breakTimeMin: '',
+    breakTimeSec: '',
+    taskTimeMin: '',
+    taskTimeSec: '',
     d: []
 };
 
@@ -13,7 +15,7 @@ const handleTasksReducer = (state = defaultState, action) => {
     switch(action.type) {
 
     case 'ENTER_TASK':
-        let updatedVersion = state.currentTask; 
+        let updatedVersion = action.task; 
         return  {...state, currentTask: updatedVersion};   
 
     case 'ADD_NEW_TASK':

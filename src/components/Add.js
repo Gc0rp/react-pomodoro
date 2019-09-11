@@ -1,5 +1,6 @@
 import React from 'react'; 
 import {connect} from 'react-redux';
+import AddNewTask from '../actions/AddNewTask';
 
 const AddStyles = { 
     width: "100px",
@@ -18,7 +19,8 @@ class Add extends React.Component{
     }
 
     handleClick(){
-        console.log(this.props.ct);
+        console.log(this.props.currentInput);
+        this.props.AddNewTask(this.props.currentInput, '30');
     }
 
     render(){
@@ -30,8 +32,16 @@ class Add extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        ct: state.currentTask,
+        currentInput: state.currentTask
     };
 };
 
-export default connect(mapStateToProps)(Add);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        AddNewTask: (task, taskTime) => {
+            dispatch(AddNewTask(task, taskTime));
+        }
+    }; 
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Add);
