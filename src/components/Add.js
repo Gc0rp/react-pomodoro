@@ -19,8 +19,7 @@ class Add extends React.Component{
     }
 
     handleClick(){
-        console.log(this.props.currentInput);
-        this.props.AddNewTask(this.props.currentInput, '30');
+        this.props.AddNewTask(this.props.currentInput, this.props.taskTime, this.props.breakTime);
     }
 
     render(){
@@ -32,14 +31,16 @@ class Add extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        currentInput: state.currentTask
+        currentInput: state.currentTask,
+        taskTime: state.taskTimeMin,
+        breakTime: state.breakTimeMin
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        AddNewTask: (task, taskTime) => {
-            dispatch(AddNewTask(task, taskTime));
+        AddNewTask: (task, taskTime, breakTime) => {
+            dispatch(AddNewTask(task, taskTime, breakTime));
         }
     }; 
 };

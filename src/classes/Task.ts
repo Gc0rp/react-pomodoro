@@ -1,10 +1,11 @@
 export class Task { 
     title: string; 
-    time: string;
+    taskTime: number;
+    breakTime: number;
 
-
-    constructor(tt: string, tm: string) {
+    constructor(tt: string, tm: number, bm: number) {
         this.title = tt;
-        this.time = tm;
+        this.taskTime = tm;
+        this.breakTime = bm;
     };
 }

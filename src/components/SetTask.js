@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import {connect} from 'react-redux';
 import MainHeading from '../constants/css/Heading';
 import InputTask from './InputTask';
 import SubHeading from '../constants/css/SubHeading';
@@ -28,8 +29,8 @@ class SetTask extends React.Component{
                         <SubHeading>Session Length</SubHeading>
                     </div>
                     <div className="col-lg-6 setTaskLabel" style={{padding: "12px", display: "flex"}}>
-                        <ArrowUp />
-                        <h3>25:00</h3>
+                        <ArrowUp buttonType="session"/>
+                        <h3>{this.props.sessionMin}:00</h3>
                         <ArrowDown />
                     </div>
                 </div>
@@ -40,7 +41,7 @@ class SetTask extends React.Component{
                     </div>
                     <div className="col-lg-6 setTaskLabel" style={{padding: "12px", display: "flex"}}>
                         <ArrowUp />
-                        <h3>25:00</h3>
+                        <h3>{this.props.breakMin}:00</h3>
                         <ArrowDown />
                     </div>
                 </div>
@@ -51,6 +52,13 @@ class SetTask extends React.Component{
             </Fragment>
         );
     }
-}
+};
 
-export default SetTask;
+const mapStateToProps = (state) => {
+    return {
+        sessionMin: state.taskTimeMin,
+        breakMin: state.breakTimeMin
+    };
+};
+
+export default connect(mapStateToProps,null)(SetTask);
