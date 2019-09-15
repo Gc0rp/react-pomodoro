@@ -31,7 +31,7 @@ class SetTask extends React.Component{
                     <div className="col-lg-6 setTaskLabel" style={{padding: "12px", display: "flex"}}>
                         <ArrowUp buttonType="session"/>
                         <h3>{this.props.sessionMin}:00</h3>
-                        <ArrowDown />
+                        <ArrowDown  buttonType="session"/>
                     </div>
                 </div>
 
