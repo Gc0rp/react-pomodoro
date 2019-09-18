@@ -17,7 +17,7 @@ const handleTasksReducer = (state = defaultState, action) => {
 
     case 'ADD_NEW_TASK':
         const newTask = new Task(action.name, action.time, action.break);
-        let newState = {...state};
+        let newState = {...state, todos: [...state.todos]};
         newState.todos.push(newTask);
         return newState;
     case 'INCREASE_SESSION_TIME':

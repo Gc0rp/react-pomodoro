@@ -25,6 +25,33 @@ const reset = css`
         margin: 5px;
     }
 
+    .list-of-todos{
+        border: 1px solid red;
+    }
+
+    .display-todos{
+        list-style-type: none;
+    }
+
+    .todoItem{
+        font-family: 'Cantarell', sans-serif;
+        font-size: 20px;
+    }
+
+    .col-lg-6{
+        border: 1px solid red;
+        word-wrap: break-word;
+    }
+
+    #col-button{
+        text-align: right;
+    }
+
+    .delete-button{
+        margin-right: 15px;
+    }
+    
+
     .setTaskLabel{
         padding-left: 0px;
         border: 1px solid red;
