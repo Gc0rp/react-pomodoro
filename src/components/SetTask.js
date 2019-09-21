@@ -51,7 +51,7 @@ class SetTask extends React.Component{
                 </div>
             </Fragment>
         );
-    }
+    }   
 };
 
 const mapStateToProps = (state) => {

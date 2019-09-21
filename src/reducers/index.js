@@ -8,18 +8,12 @@ const defaultState = {
     todos: []
 };
 
-const handleTasksReducer = (state = defaultState, action) => {
+const handleTasks = (state = defaultState, action) => {
     switch(action.type) {
 
     case 'ENTER_TASK':
         let updatedVersion = action.task; 
         return  {...state, currentTask: updatedVersion};   
-
-    case 'ADD_NEW_TASK':
-        const newTask = new Task(action.name, action.time, action.break);
-        let newState = {...state, todos: [...state.todos]};
-        newState.todos.push(newTask);
-        return newState;
     case 'INCREASE_SESSION_TIME':
         return {...state, taskTimeMin: state.taskTimeMin + 1};
     case 'INCREASE_BREAK_TIME':
@@ -35,12 +29,25 @@ const handleTasksReducer = (state = defaultState, action) => {
         }
         return state;
 
+    case 'ADD_NEW_TASK':
+        const newTask = new Task(action.name, action.time, action.break);
+        let newState = {...state, todos: [...state.todos]};
+        newState.todos.push(newTask);
+        return newState;
+
+    case 'DELETE_TODO':
+        const newTodos =  state.todos.filter( (i) => {
+            return JSON.stringify(i) !== JSON.stringify(action.deleteItem);
+        });
+
+        return {...state, todos: [...newTodos]};
+
     default:
         return defaultState;
 
     }
 };
 
-const rootReducer = handleTasksReducer;
+const rootReducer = handleTasks;
 
 export default rootReducer;

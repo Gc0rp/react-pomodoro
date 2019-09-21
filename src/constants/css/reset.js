@@ -26,7 +26,6 @@ const reset = css`
     }
 
     .list-of-todos{
-        border: 1px solid red;
     }
 
     .display-todos{
@@ -39,7 +38,6 @@ const reset = css`
     }
 
     .col-lg-6{
-        border: 1px solid red;
         word-wrap: break-word;
     }
 
@@ -54,12 +52,20 @@ const reset = css`
 
     .setTaskLabel{
         padding-left: 0px;
-        border: 1px solid red;
     }
 
     .list-of-todo-label{
         text-align: left;
     }
+
+    hr {
+        border: 0;
+        display:block;
+        width: 40%;               
+        background-color: #FF8552;
+        
+        height: 1px;
+        }
 
     ::placeholder{
         color: white;
