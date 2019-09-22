@@ -15,7 +15,7 @@ class BoxOne extends React.Component{
                     <SetTask />
                 </div>
                 
-                <div className="col-lg-12">
+                <div className="col-lg-12" style={{"padding-left": "35px"}}>
                     <CurrentTask />
                 </div>
                 

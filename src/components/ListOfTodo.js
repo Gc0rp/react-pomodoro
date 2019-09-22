@@ -30,10 +30,8 @@ class ListOfTodo extends React.Component{
                     <div className="col-lg-6" id="col-button">
                         <button type="button" className="btn delete-button" onClick={() => this.deleteTodo(new Task(i.title, i.taskTime, i.breakTime))}>X</button>
                     </div>
-
                     <hr/>
                 </div>
-                
             );
         });
     

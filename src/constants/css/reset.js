@@ -39,6 +39,12 @@ const reset = css`
 
     .col-lg-6{
         word-wrap: break-word;
+
+    }
+
+    .current-task{
+        word-wrap: break-word;
+        max-width: 250px;
     }
 
     #col-button{
