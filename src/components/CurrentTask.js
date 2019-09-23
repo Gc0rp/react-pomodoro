@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {connect} from 'react-redux';
+import TaskTimer from './TaskTimer';
 import BoxStyle from '../constants/css/BoxStyle';
 
 const DisplayTask = styled.h1`
@@ -21,23 +22,29 @@ class CurrentTask extends React.Component{
 
 
     render(){
-        const t = this.props.firstTask.map( (i) => {
-            return(
-                <DisplayTask>{i.title}</DisplayTask>
-                <TaskTime>{i.taskTime}</TaskTime>
+        const t = this.props.firstTask;
+        
+            if (t != undefined) {
+                return(
+                <div className="col-md-6 current-task" style={{"border" : "1px solid red"}}>
+                    <DisplayTask>{t.title}</DisplayTask>
+                    <TaskTimer taskTime={t.taskTime} />
+                 </div>
+                );
+            } 
+                
+            return (
+                <div className="col-md-6 current-task" style={{"border" : "1px solid red"}}>
+                <p>No Tasks entered</p>
+                </div>
             );
-        });
-        return(
-            <div className="col-md-6 current-task" style={{"border" : "1px solid red"}}>
-                {t[0]}
-            </div>
-        );
-    }
-}
+    };
+};
+
 
 const mapStateToProps = (state) => {
     return {
-        firstTask : state.todos
+        firstTask : state.todos[0]
     };
 };
 export default connect(mapStateToProps, null)(CurrentTask);
