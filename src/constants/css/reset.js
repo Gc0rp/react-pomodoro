@@ -39,16 +39,21 @@ const reset = css`
 
     .col-lg-6{
         word-wrap: break-word;
-
     }
 
-    .current-task{
+    #current-task{
         word-wrap: break-word;
-        max-width: 250px;
+        max-width: 300px;
+        padding: 0px;
+        margin: 0px;
     }
 
     #col-button{
         text-align: right;
+    }
+
+    #task-reset{
+        margin: 0px;
     }
 
     .delete-button{
@@ -68,13 +73,29 @@ const reset = css`
         border: 0;
         display:block;
         width: 40%;               
-        background-color: #FF8552;
-        
+        background-color: #FF8552;    
         height: 1px;
-        }
+    }
 
     ::placeholder{
         color: white;
+    }
+
+    .list-of-todos::webkit-scrollbar{
+        width: 5px;
+    }
+
+    .list-of-todos::webkit-scrollbar-track{
+        background: #FF8552;
+    }
+
+    .list-of-todos::webkit-scrollbar-thumb{
+        background: #FF8552;
+        border-radius: 5px;
+    }
+
+    .list-of-todos::webkit-scrollbar-thumb:hover{
+        background: #FF8552;
     }
 `;
 

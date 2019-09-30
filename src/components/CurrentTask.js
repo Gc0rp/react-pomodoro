@@ -20,13 +20,12 @@ class CurrentTask extends React.Component{
         super(props);
     }
 
-
     render(){
         const t = this.props.firstTask;
 
             if (t != undefined) {
                 return(
-                <div className="col-md-6 current-task" style={{"border" : "1px solid red"}}>
+                <div className="col-lg-12" id="current-task">
                     <DisplayTask>{t.title}</DisplayTask>
                     <TaskTimer taskTime={t.taskTime} />
                  </div>
@@ -34,13 +33,12 @@ class CurrentTask extends React.Component{
             } 
                 
             return (
-                <div className="col-md-6 current-task" style={{"border" : "1px solid red"}}>
+                <div className="col-md-6" id="current-task">
                 <p>No Tasks entered</p>
                 </div>
             );
     };
 };
-
 
 const mapStateToProps = (state) => {
     return {

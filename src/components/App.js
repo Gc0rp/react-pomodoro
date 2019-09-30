@@ -8,11 +8,9 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     width: 70%
-    height: 85vh;
+    height: 90vh;
     font-family: 'Open Sans', sans-serif;
-    border: 2px solid #FF8552;
     margin: auto;
-    margin-top: 45px;
 `;
 
 const App = () => (
@@ -21,13 +19,7 @@ const App = () => (
             <BoxOne/>
             <ListOfTodo />
         </div>
-
-        {/* // <div className="row" style={{height: "100%"}}>
-        //     <div className="col-lg-12">
-        //         
-        //     </div>
-        // </div> */}
-        
+ 
     </Container>
 );
 
