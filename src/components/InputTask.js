@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Task from '../classes/Task';
 import EnterTask from '../actions/EnterTask';
 
 const InputBoxStyle = {

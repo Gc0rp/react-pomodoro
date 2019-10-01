@@ -1,5 +1,8 @@
 import React, {Fragment} from 'react';
 import styled from 'styled-components';
+import {connect} from 'react-redux';
+import TaskCompleted from '../actions/TaskCompleted';
+
 import PauseButton from '../images/PauseButton.png';
 import PlayButton from '../images/PlayButton.png';
 import ResetButton from '../images/reset.png';
@@ -64,6 +67,7 @@ class TaskTimer extends React.Component{
                 });
             } else {
                 this.stopTime();
+                this.props.taskCompleted();
             }
         }, 1000);
     }
@@ -125,4 +129,12 @@ class TaskTimer extends React.Component{
     };
 };
 
-export default TaskTimer;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        taskCompleted: (item) => {
+            dispatch(TaskCompleted(item));
+        }
+    };
+};
+
+export default connect(null, mapDispatchToProps)(TaskTimer);

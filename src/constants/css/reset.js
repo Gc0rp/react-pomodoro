@@ -81,22 +81,26 @@ const reset = css`
         color: white;
     }
 
-    .list-of-todos::webkit-scrollbar{
-        width: 5px;
-    }
-
-    .list-of-todos::webkit-scrollbar-track{
-        background: #FF8552;
-    }
-
-    .list-of-todos::webkit-scrollbar-thumb{
-        background: #FF8552;
-        border-radius: 5px;
-    }
-
-    .list-of-todos::webkit-scrollbar-thumb:hover{
-        background: #FF8552;
-    }
+    /* Let's get this party started */
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #FF8552; 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #FF8552; 
+}
 `;
 
 export default reset;

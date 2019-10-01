@@ -28,7 +28,7 @@ class ListOfTodo extends React.Component{
                         <li key={i.title} className="todoItem">{i.title}</li>
                     </div>
                     <div className="col-lg-6" id="col-button">
-                        <button type="button" className="btn delete-button" onClick={() => this.deleteTodo(new Task(i.title, i.taskTime, i.breakTime))}>X</button>
+                        <button type="button" className="btn delete-button" onClick={() => this.deleteTodo(new Task(i.title, i.taskTime, i.breakTime, i.taskCompleted))}>X</button>
                     </div>
                     <hr/>
                 </div>
