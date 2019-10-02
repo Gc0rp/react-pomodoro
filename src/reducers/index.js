@@ -41,9 +41,19 @@ const handleTasks = (state = defaultTaskState, action) => {
         const newTask = new Task(action.name, action.time, action.break, false);
         let newState = {...state, todos: [...state.todos]};
         newState.todos.push(newTask);
+        newState.todos.push({title: "Break", breakTime: action.break, type:"Break"});
         return newState;
 
-    case 'DELETE_TODO':
+    case 'DELETE_TODO': 
+        let i = 0;
+
+        for(; i < state.todos.length; i += 1) {
+            if(state.todos[i].title === action.deleteItem.title){
+                break;
+            }
+        }
+
+        console.log(i);
         const newTodos =  state.todos.filter( (i) => {
             return JSON.stringify(i) !== JSON.stringify(action.deleteItem);
         });

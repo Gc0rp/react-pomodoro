@@ -6,6 +6,7 @@ var Task = /** @class */ (function () {
         this.taskTime = tm;
         this.breakTime = bm;
         this.taskCompleted = tc;
+        this.type = "Task";
     }
     ;
     return Task;

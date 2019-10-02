@@ -21,13 +21,13 @@ class CurrentTask extends React.Component{
     }
 
     render(){
-        const t = this.props.first  
+        const t = this.props.firstTask;  
 
             if (t != undefined) {
                 return(
                 <div className="col-lg-12" id="current-task">
-                    <DisplayTask>{this.props.firstTask.taskCompleted ? "Break" : this.props.firstTask.title }</DisplayTask>
-                    <TaskTimer taskTime={t.taskTime} />
+                    <DisplayTask>{t.title}</DisplayTask> 
+                    <TaskTimer taskTime={ (t.type === "Break" ? t.breakTime : t.taskTime) } />
                  </div>
                 );
             } 

@@ -7,7 +7,6 @@ import PauseButton from '../images/PauseButton.png';
 import PlayButton from '../images/PlayButton.png';
 import ResetButton from '../images/reset.png';
 
-
 const Timer = styled.h3`
 font-family: 'Cantarell', sans-serif;
 color: #FF8552;
