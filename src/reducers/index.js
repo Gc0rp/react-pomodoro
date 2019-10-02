@@ -53,16 +53,13 @@ const handleTasks = (state = defaultTaskState, action) => {
             }
         }
 
-        console.log(i);
-        const newTodos =  state.todos.filter( (i) => {
-            return JSON.stringify(i) !== JSON.stringify(action.deleteItem);
-        });
+        const newTodos = [...state.todos.slice(0,i), ...state.todos.slice(i+2,state.todos.length)];
 
         return {...state, todos: [...newTodos]};
 
     case 'TASK_COMPLETED':
         const tasks = [...state.todos];
-        tasks[0].taskCompleted = true;
+        tasks.shift();
 
         return {...state, todos:[...tasks]};
 

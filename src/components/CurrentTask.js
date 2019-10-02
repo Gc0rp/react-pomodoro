@@ -27,7 +27,7 @@ class CurrentTask extends React.Component{
                 return(
                 <div className="col-lg-12" id="current-task">
                     <DisplayTask>{t.title}</DisplayTask> 
-                    <TaskTimer taskTime={ (t.type === "Break" ? t.breakTime : t.taskTime) } />
+                    <TaskTimer taskTime={ (t.type === "Break" ? t.breakTime : t.taskTime)} type={t.type} />
                  </div>
                 );
             } 

@@ -67,6 +67,15 @@ class TaskTimer extends React.Component{
             } else {
                 this.stopTime();
                 this.props.taskCompleted();
+
+                if(this.props.type === "Break") {
+                    this.setState({
+                        minutes: this.props.taskTime,
+                        seconds: 0,
+                        pause: false,
+                        pausePlayButton: PauseButton
+                    });
+                }
             }
         }, 1000);
     }

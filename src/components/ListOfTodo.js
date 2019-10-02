@@ -22,17 +22,20 @@ class ListOfTodo extends React.Component{
     render(){
 
         const renderedElements = this.props.todosList.map( (i) => {
-            return (
-                <div className="row">
-                    <div className="col-lg-6">
-                        <li key={i.title} className="todoItem">{i.title}</li>
+            if(i.type === "Task"){
+                return (
+                    <div className="row">
+                        <div className="col-lg-6">
+                            <li key={i.title} className="todoItem">{i.title}</li>
+                        </div>
+                        <div className="col-lg-6" id="col-button">
+                            <button type="button" className="btn delete-button" onClick={() => this.deleteTodo(new Task(i.title, i.taskTime, i.breakTime, i.taskCompleted))}>X</button>
+                        </div>
+                        <hr/>
                     </div>
-                    <div className="col-lg-6" id="col-button">
-                        <button type="button" className="btn delete-button" onClick={() => this.deleteTodo(new Task(i.title, i.taskTime, i.breakTime, i.taskCompleted))}>X</button>
-                    </div>
-                    <hr/>
-                </div>
-            );
+                );
+    
+            }
         });
     
         return(
