@@ -13,7 +13,7 @@ class ArrowDown extends React.Component{
     }
 
     handleClick(){
-        if(this.props.buttonType === "session") {
+        if(this.props.id === "session-decrement") {
             this.props.decreaseTaskTime();
         } else {
             this.props.decreaseBreakTime();

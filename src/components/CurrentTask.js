@@ -23,15 +23,17 @@ class CurrentTask extends React.Component{
     render(){
         const t = this.props.firstTask;  
         
-        if(this.props.firstTask === "Break" && this.props.firstTask.breakTime < 10) {
-            t.breakTime = '0' + String(t.breakTime); 
-        } else if (this.props.firstTask === "Task" && this.props.firstTask.taskTime < 10) {
-            t.taskTime = '0' + String(t.taskTime);
-        }
+
         
         console.log(t);
 
             if (t != undefined) {
+                if(this.props.firstTask.type === "Break" && this.props.firstTask.breakTime < 10) {
+                    t.breakTime = '0' + String(t.breakTime); 
+                } else if (this.props.firstTask.type === "Task" && this.props.firstTask.taskTime < 10) {
+                    console.log("in Task");
+                    t.taskTime = '0' + String(t.taskTime);
+                }
                 return(
                 <div className="col-lg-12" id="current-task">
                     <DisplayTask id="timer-label">{t.title}</DisplayTask> 

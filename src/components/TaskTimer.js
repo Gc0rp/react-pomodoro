@@ -2,10 +2,12 @@ import React, {Fragment} from 'react';
 import styled from 'styled-components';
 import {connect} from 'react-redux';
 import TaskCompleted from '../actions/TaskCompleted';
+import Reset from '../actions/Reset';
 
 import PauseButton from '../images/PauseButton.png';
 import PlayButton from '../images/PlayButton.png';
-import ResetButton from '../images/reset.png';
+import ResetButtonImage from '../images/reset.png';
+import cymbals from '../sounds/cymbals.wav';
 
 const Timer = styled.h3`
 font-family: 'Cantarell', sans-serif;
@@ -16,7 +18,7 @@ padding-top: 20px;
 min-width: 80px;
 `;
 
-const Reset = styled.h3`
+const ResetLabel = styled.h3`
 font-family: 'Cantarell', sans-serif;
 color: #FF8552;
 font-size: 20px;
@@ -98,6 +100,9 @@ class TaskTimer extends React.Component{
             minutes: this.props.taskTime,
             seconds: 0
         });
+
+        this.props.reset();
+        this.stopTime();
     }
 
     handleTimer(){
@@ -127,7 +132,7 @@ class TaskTimer extends React.Component{
             <Fragment>
                 <div style={{display: "flex"}}>
                     <div>
-                        <Timer id="time-left">{this.state.minutes} : {this.state.seconds}</Timer>
+                        <Timer id="time-left">{this.state.minutes}:{this.state.seconds}</Timer>
                     </div> 
                     <div>
                         <button type="button" className="btn" id="start_stop" onClick={this.handleTimer} style={{marginLeft: "90px"}}>
@@ -138,10 +143,11 @@ class TaskTimer extends React.Component{
 
                 <div className="row">
                     <div className="col-lg-12" id="task-reset">
-                        <Reset id="reset-label">Restart</Reset>
+                        <ResetLabel id="reset-label">Restart</ResetLabel>
                         <button type="button" className="btn" onClick={this.resetTaskTime} id="reset">
-                            <img src={ResetButton} style={{width: "25px", height: "20px"}} alt="Reset button"/>
+                            <img src={ResetButtonImage} style={{width: "25px", height: "20px"}} alt="Reset button"/>
                         </button>
+                        <audio src={cymbals}></audio>
                     </div>
                 </div>
             </Fragment>
@@ -154,6 +160,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         taskCompleted: (item) => {
             dispatch(TaskCompleted(item));
+        },
+        reset: () => {
+            dispatch(Reset());
         }
     };
 };

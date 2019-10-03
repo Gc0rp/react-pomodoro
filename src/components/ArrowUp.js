@@ -12,7 +12,7 @@ class ArrowUp extends React.Component{
     }
 
     handleClick() {
-        if(this.props.buttonType === "session"){
+        if(this.props.id === "session-increment"){
             this.props.increaseSession();
         } else{
             this.props.increaseBreak();

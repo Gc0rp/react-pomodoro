@@ -42,6 +42,8 @@ const handleTasks = (state = defaultTaskState, action) => {
         let newState = {...state, todos: [...state.todos]};
         newState.todos.push(newTask);
         newState.todos.push({title: "Break", breakTime: action.break, type:"Break"});
+        newState.taskTimeMin = 25;
+        newState.breakTimeMin = 5;
         return newState;
 
     case 'DELETE_TODO': 
@@ -62,6 +64,13 @@ const handleTasks = (state = defaultTaskState, action) => {
         tasks.shift();
 
         return {...state, todos:[...tasks]};
+
+    case 'RESET':
+        newState = {...state};
+        newState.taskTimeMin = 25;
+        newState.breakTimeMin = 5;
+
+        return newState;
 
     default:
         return defaultTaskState;

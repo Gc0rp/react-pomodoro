@@ -7,6 +7,10 @@ module.exports = [
         }
     },
     {
+        test: /\.wav$/,
+        loader: 'file-loader'
+    },
+    {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
         exclude: /node_modules/,
         loader: 'file-loader'
