@@ -29,9 +29,9 @@ class SetTask extends React.Component{
                         <SubHeading id="session-label">Session Length</SubHeading>
                     </div>
                     <div className="col-lg-6 setTaskLabel" style={{padding: "12px", display: "flex"}}>
-                        <ArrowUp id="session-increment" buttonType="session"/>
-                        <h3 id="session-length">{this.props.sessionMin}:00</h3>
-                        <ArrowDown id="session-decrement" buttonType="session"/>
+                        <ArrowUp id={"session-increment"} buttonType="session"/>
+                        <h3 id="session-length">{this.props.sessionMin}</h3>
+                        <ArrowDown id={"session-decrement"} buttonType="session"/>
                     </div>
                 </div>
 
@@ -40,9 +40,9 @@ class SetTask extends React.Component{
                         <SubHeading id="break-label">Break Length</SubHeading>
                     </div>
                     <div className="col-lg-6 setTaskLabel" style={{padding: "12px", display: "flex"}}>
-                        <ArrowUp id="break-increment"/>
-                        <h3 id="break-length">{this.props.breakMin}:00</h3>
-                        <ArrowDown id="break-decrement"/>
+                        <ArrowUp id={"break-increment"}/>
+                        <h3 id="break-length">{this.props.breakMin}</h3>
+                        <ArrowDown id={"break-decrement"}/>
                     </div>
                 </div>
 

@@ -23,7 +23,7 @@ class ArrowDown extends React.Component{
 
     render(){
         return(
-            <button className="btn" type="button" onClick={this.handleClick}>
+            <button className="btn" type="button" onClick={this.handleClick} id={this.props.id}>
                 <img style={{height: "20px", width: "20px", marginBottom: "8px"}} src={ArrowDownImage} alt="Arrow Down" />
             </button>
         );
