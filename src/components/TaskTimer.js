@@ -77,11 +77,14 @@ class TaskTimer extends React.Component{
                         seconds: 59,
                         minutes: this.state.minutes - 1
                     });
+                    
                 }
                 
             } else {
                 this.stopTime();
                 this.props.taskCompleted();
+                const playSound = document.getElementById("beep");
+                playSound.play();
 
                 if(this.props.type === "Break") {
                     this.setState({
@@ -117,6 +120,8 @@ class TaskTimer extends React.Component{
                 pausePlayButton: PauseButton
             });
             this.stopTime();
+            
+            
         }
     }
 
@@ -147,7 +152,9 @@ class TaskTimer extends React.Component{
                         <button type="button" className="btn" onClick={this.resetTaskTime} id="reset">
                             <img src={ResetButtonImage} style={{width: "25px", height: "20px"}} alt="Reset button"/>
                         </button>
-                        <audio src={cymbals}></audio>
+                        <audio id="beep" style={{visibility:"hidden"}} controls>
+                            <source src={cymbals} type="audio/wav" />
+                        </audio>
                     </div>
                 </div>
             </Fragment>
