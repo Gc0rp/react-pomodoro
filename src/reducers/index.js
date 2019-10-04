@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { Task } from '../classes/Task';
 
 const defaultTaskState = {
@@ -38,13 +37,16 @@ const handleTasks = (state = defaultTaskState, action) => {
         return state;
 
     case 'ADD_NEW_TASK':
-        const newTask = new Task(action.name, action.time, action.break, false);
-        let newState = {...state, todos: [...state.todos]};
-        newState.todos.push(newTask);
-        newState.todos.push({title: "Break", breakTime: action.break, type:"Break"});
-        newState.taskTimeMin = 25;
-        newState.breakTimeMin = 5;
-        return newState;
+        if(action.name.length > 0) {
+            const newTask = new Task(action.name, action.time, action.break, false);
+            let newState = {...state, todos: [...state.todos]};
+            newState.todos.push(newTask);
+            newState.todos.push({title: "Break", breakTime: action.break, type:"Break"});
+            newState.taskTimeMin = 25;
+            newState.breakTimeMin = 5;
+            return newState;
+        }
+        return state;    
 
     case 'DELETE_TODO': 
         let i = 0;
@@ -54,7 +56,6 @@ const handleTasks = (state = defaultTaskState, action) => {
                 break;
             }
         }
-
         const newTodos = [...state.todos.slice(0,i), ...state.todos.slice(i+2,state.todos.length)];
 
         return {...state, todos: [...newTodos]};
